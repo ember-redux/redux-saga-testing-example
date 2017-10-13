@@ -1,51 +1,29 @@
-# testing-demo
+# Testing ember redux
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+An example showing how you might acceptance, integration and unit test ember redux applications
 
-## Prerequisites
+## Acceptance Tests
 
-You will need the following things properly installed on your computer.
+https://github.com/toranb/redux-saga-testing-example/blob/master/tests/acceptance/information-test.js
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with NPM)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+## Integration Tests
 
-## Installation
+https://github.com/toranb/redux-saga-testing-example/blob/master/tests/integration/components/info-configure-test.js
 
-* `git clone <repository-url>` this repository
-* `cd testing-demo`
-* `npm install`
+https://github.com/toranb/redux-saga-testing-example/blob/master/tests/integration/components/info-detail-test.js
 
-## Running / Development
+## Unit Tests
+
+https://github.com/toranb/redux-saga-testing-example/blob/master/tests/unit/reducers/information-test.js
+
+https://github.com/toranb/redux-saga-testing-example/blob/master/tests/unit/selectors/information-test.js
+
+## Running The App
 
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
 
 ### Running Tests
 
 * `ember test`
 * `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
