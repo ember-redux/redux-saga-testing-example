@@ -1,0 +1,4 @@
+{{#each-in item as |key value|}}
+  <div test-id="{{key}}Info">{{key}}: {{value}}</div>
+{{/each-in}}
+{{#link-to "information.detail.configure" item.id test-id="configureLink"}}configure{{/link-to}}
