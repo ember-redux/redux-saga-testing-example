@@ -38,6 +38,7 @@
     "ember-load-initializers": "^1.0.0",
     "ember-lodash-shim": "^2.0.5",
     "ember-redux": "^3.0.0",
+    "ember-redux-freeze": "^1.0.0",
     "ember-redux-saga-shim": "^1.1.0",
     "ember-redux-shim": "^2.5.0",
     "ember-redux-thunk-shim": "^2.4.0",
