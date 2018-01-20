@@ -4,19 +4,19 @@ An example showing how you might acceptance, integration and unit test ember red
 
 ## Acceptance Tests
 
-https://github.com/toranb/redux-saga-testing-example/blob/master/tests/acceptance/information-test.js
+https://github.com/ember-redux/redux-saga-testing-example/blob/master/tests/acceptance/information-test.js
 
 ## Integration Tests
 
-https://github.com/toranb/redux-saga-testing-example/blob/master/tests/integration/components/info-configure-test.js
+https://github.com/ember-redux/redux-saga-testing-example/blob/master/tests/integration/components/info-configure-test.js
 
-https://github.com/toranb/redux-saga-testing-example/blob/master/tests/integration/components/info-detail-test.js
+https://github.com/ember-redux/redux-saga-testing-example/blob/master/tests/integration/components/info-detail-test.js
 
 ## Unit Tests
 
-https://github.com/toranb/redux-saga-testing-example/blob/master/tests/unit/reducers/information-test.js
+https://github.com/ember-redux/redux-saga-testing-example/blob/master/tests/unit/reducers/information-test.js
 
-https://github.com/toranb/redux-saga-testing-example/blob/master/tests/unit/selectors/information-test.js
+https://github.com/ember-redux/redux-saga-testing-example/blob/master/tests/unit/selectors/information-test.js
 
 ## Running The App
 
