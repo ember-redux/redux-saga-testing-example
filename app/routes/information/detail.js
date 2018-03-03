@@ -1,7 +1,7 @@
 import { route } from 'ember-redux';
 
-const model = (dispatch, params) => {
-  const { selectedId } = params;
+const model = (dispatch, { selected_id }) => {
+  const selectedId = selected_id;
   dispatch({type: 'FETCH_CONFIG_ASYNC', selectedId});
   return selectedId;
 }
