@@ -1,10 +1,12 @@
 import { test, module } from 'qunit';
+import { setupTest } from 'ember-qunit';
 import { activeItem } from 'testing-demo/reducers/information';
 
-module('Unit | Selectors | information');
+module('Unit | Selectors | information', function(hooks) {
+  setupTest(hooks);
 
-test('activeItem should filter out any inactive column', function(assert) {
-  const result = activeItem({
+  test('activeItem should filter out any inactive column', function(assert) {
+    const result = activeItem({
       information: {
         selectedItem: 1,
         all: {
@@ -30,9 +32,11 @@ test('activeItem should filter out any inactive column', function(assert) {
           }
         }
       }
+    });
+
+    assert.deepEqual(result, {
+      id: '1'
+    });
   });
 
-  assert.deepEqual(result, {
-    id: '1'
-  });
 });

@@ -1,49 +1,51 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
 import hbs from 'htmlbars-inline-precompile';
-import { patchReducer, unpatchReducer } from 'testing-demo/tests/helpers/patch-reducer';
+import { render } from '@ember/test-helpers';
+import { setupRenderingTest } from 'ember-qunit';
+import { find } from '@ember/test-helpers';
+import { patchReducer } from 'testing-demo/tests/helpers/vnext-patch';
 
-moduleForComponent('info-detail', 'Integration | Component | info detail', {
-  integration: true,
-  beforeEach() {
-    const initState = {
-      information: {
-        selectedItem: 2,
-        all: {
-          1: {
-            id: '1',
-            name: 'one'
-          },
-          2: {
-            id: '2',
-            name: 'two'
-          }
-        },
-        configuration: {
-          1: {
-            id: '1',
-            column: 'id',
-            active: true
-          },
-          2: {
-            id: '2',
-            column: 'name',
-            active: true
-          }
-        }
+const initState = {
+  information: {
+    selectedItem: 2,
+    all: {
+      1: {
+        id: '1',
+        name: 'one'
+      },
+      2: {
+        id: '2',
+        name: 'two'
       }
-    };
-    patchReducer(initState);
-    this.inject.service('redux');
-  },
-  afterEach() {
-    unpatchReducer();
+    },
+    configuration: {
+      1: {
+        id: '1',
+        column: 'id',
+        active: true
+      },
+      2: {
+        id: '2',
+        column: 'name',
+        active: true
+      }
+    }
   }
-});
+};
 
-test('should render item with all fields provided', function(assert) {
-  this.render(hbs`{{info-detail}}`);
+module('Integration | Component | info detail', function(hooks) {
+  setupRenderingTest(hooks);
 
-  assert.equal(this.$('[test-id=idInfo]').text().trim(), 'id: 2');
-  assert.equal(this.$('[test-id=nameInfo]').text().trim(), 'name: two');
-  assert.equal(this.$('[test-id=configureLink]').text().trim(), 'configure');
+  hooks.beforeEach(function() {
+    patchReducer(this, initState);
+  });
+
+  test('should render item with all fields provided', async function(assert) {
+    await render(hbs`{{info-detail}}`);
+
+    assert.equal(find('[test-id=idInfo]').textContent, 'id: 2');
+    assert.equal(find('[test-id=nameInfo]').textContent, 'name: two');
+    assert.equal(find('[test-id=configureLink]').textContent, 'configure');
+  });
+
 });
