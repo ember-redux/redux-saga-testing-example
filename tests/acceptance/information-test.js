@@ -1,27 +1,25 @@
-import { test } from 'qunit';
-import moduleForAcceptance from 'testing-demo/tests/helpers/module-for-acceptance';
+import { test, module } from 'qunit';
+import { visit, click, findAll, currentURL } from '@ember/test-helpers';
+import { setupApplicationTest } from 'ember-qunit';
 
-moduleForAcceptance('Acceptance | information');
+module('Acceptance | information', function(hooks) {
+  setupApplicationTest(hooks);
 
-test('configure info columns available from detail route', function(assert) {
-  visit('/');
+  test('configure info columns available from detail route', async function(assert) {
+    await visit('/');
 
-  andThen(function() {
     assert.equal(currentURL(), '/');
-    assert.equal(find('[test-id=detailLink]').length, 3);
-  });
+    assert.equal(findAll('[test-id=detailLink]').length, 3);
 
-  click('[test-id=detailLink]:eq(0)');
+    await click('[test-id=detailLink]:nth-of-type(1)');
 
-  andThen(function() {
     assert.equal(currentURL(), '/detail/1');
-    assert.equal(find('[test-id=configureLink]').length, 1);
-  });
+    assert.equal(findAll('[test-id=configureLink]').length, 1);
 
-  click('[test-id=configureLink]');
+    await click('[test-id=configureLink]');
 
-  andThen(function() {
     assert.equal(currentURL(), '/detail/1/configure');
-    assert.equal(find('[test-id=configOption]').length, 2);
+    assert.equal(findAll('[test-id=configOption]').length, 2);
   });
+
 });
