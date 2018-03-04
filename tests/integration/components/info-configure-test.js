@@ -1,8 +1,7 @@
 import { module, test } from 'qunit';
 import hbs from 'htmlbars-inline-precompile';
-import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
-import { click, find, findAll } from '@ember/test-helpers';
+import { render, click, find, findAll } from '@ember/test-helpers';
 import { patchReducer } from 'testing-demo/tests/helpers/vnext-patch';
 import { startMirage } from 'testing-demo/initializers/ember-cli-mirage';
 

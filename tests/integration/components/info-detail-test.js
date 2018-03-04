@@ -1,8 +1,7 @@
 import { module, test } from 'qunit';
 import hbs from 'htmlbars-inline-precompile';
-import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
-import { find } from '@ember/test-helpers';
+import { render, find } from '@ember/test-helpers';
 import { patchReducer } from 'testing-demo/tests/helpers/vnext-patch';
 
 const initState = {
