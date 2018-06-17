@@ -1,9 +1,11 @@
 import { test, module } from 'qunit';
 import { visit, click, findAll, currentURL } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
+import setupMirage from 'ember-cli-mirage/test-support/setup-mirage';
 
 module('Acceptance | information', function(hooks) {
   setupApplicationTest(hooks);
+  setupMirage(hooks);
 
   test('configure info columns available from detail route', async function(assert) {
     await visit('/');
